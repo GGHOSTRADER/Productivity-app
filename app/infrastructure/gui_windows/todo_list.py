@@ -4,12 +4,6 @@ import ttkbootstrap as tb
 from ttkbootstrap import Style
 import winsound
 
-import tkinter as tk
-from tkinter import font as tkfont
-import ttkbootstrap as tb
-from ttkbootstrap import Style
-import winsound
-
 
 def open_todo_checklist_window(master, predefined_tasks, on_all_tasks_completed=None):
     window = tb.Toplevel(master)
