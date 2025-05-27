@@ -18,11 +18,15 @@ class FocusApp:
         self.stabilization_url = stabilization_url
         self.task_url = task_url
         self.hook = hook
+        self.cycle_counter_flag = True
+        self.cycle_counter_storing = 0
 
         self.setup_window()
         self.create_user_data_display()
         self.create_control_buttons()
         self.create_timer()
+        self.create_cycle_counter()
+        self.update_cycle_counter()
         self.update_timer()
 
     def setup_window(self):
@@ -103,9 +107,14 @@ class FocusApp:
         self.timer_label.config(text=self.format_time(self.seconds_elapsed))
 
         if self.mode == "Work" and not self.alarm_triggered:
+            self.cycle_counter_flag = True  # reset cycle counter flag
             if self.seconds_elapsed >= 240:  # Change seconds
                 self.trigger_alarm()
                 self.alarm_triggered = True  # prevent retriggering
+        if self.mode == "Rest" and self.cycle_counter_flag == True:
+            self.cycle_counter_storing += 1
+            self.cycle_counter_flag = False
+            self.update_cycle_counter()
 
         self.root.after(1000, self.update_timer)
 
@@ -118,6 +127,17 @@ class FocusApp:
                 winsound.Beep(1000, 800)
         except:
             pass  # cross-platform fallback
+
+    def create_cycle_counter(self):
+        self.cycle_counter = tb.Label(
+            self.root,
+            text=f"Cycle: {(self.cycle_counter_storing)}",
+            font=("Helvetica", 24),
+        )
+        self.cycle_counter.pack(pady=10)
+
+    def update_cycle_counter(self):
+        self.cycle_counter.config(text=f"Cycle: {(self.cycle_counter_storing)}")
 
 
 def launch_app(root, data, stabilization_url, task_url, hook=None):
