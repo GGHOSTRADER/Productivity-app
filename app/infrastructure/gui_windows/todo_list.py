@@ -34,17 +34,19 @@ def open_todo_checklist_window(master, predefined_tasks, on_all_tasks_completed=
     task_vars = []
 
     def check_all_tasks():
-        if all(var.get() for var in task_vars):
-            try:
-                winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-            except Exception:
-                pass
+        try:
+            if all(var.get() for var in task_vars):
+                try:
+                    winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
+                except Exception as e:
+                    print(f"[DEBUG] Sound failed: {e}")
 
-            if on_all_tasks_completed:
-                on_all_tasks_completed()
-                window.destroy()
-            else:
-                window.destroy()
+                if on_all_tasks_completed:
+                    window.destroy()
+                    on_all_tasks_completed()
+
+        except Exception as e:
+            print(f"[CRITICAL] check_all_tasks failed: {e}")
 
     for task_text in predefined_tasks:
         var = tk.BooleanVar()
