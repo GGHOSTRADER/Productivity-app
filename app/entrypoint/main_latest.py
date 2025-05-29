@@ -13,6 +13,8 @@ from application.input_service import ask_questions
 from infrastructure.input_adapters import get_user_input
 from infrastructure.gui_windows.tips import display_project_tips
 from infrastructure.presenters.cli import get_questions
+from infrastructure.nokami import launch_nokami_gui
+from infrastructure import shared_state
 
 
 def firing_app():
@@ -25,14 +27,19 @@ def firing_app():
     show_splash_screen(
         root,
         image_splash,
-        on_done=lambda: open_todo_checklist_window(root, PREDEFINED_TASKS),
+        on_done=lambda: open_todo_checklist_window(
+            root,
+            PREDEFINED_TASKS,
+            lambda: launch_nokami_gui(
+                root,
+                lambda: display_project_tips(
+                    root,
+                    categories_tasks[shared_state.state_from_chosen.type_task].tips,
+                    on_all_tasks_completed=None,
+                ),
+            ),
+        ),
         duration=10000,
-    )
-
-    user_input = prompt_user_for_project_type(list(categories_tasks.keys()))
-
-    display_project_tips(
-        root, categories_tasks[user_input].tips, on_all_tasks_completed=None
     )
 
     # This need to be defined
