@@ -52,10 +52,10 @@ def firing_app():
     gui_data = pair_gui_state_with_questions(
         [
             shared_state.state_from_chosen.current_task_title,
-            shared_state.state_from_chosen.to_do,
             shared_state.state_from_chosen.description,
+            shared_state.state_from_chosen.to_do,
         ],
-        ["Name", "To do", "Description"],
+        ["Name", "Description", "To do"],
     )
     data_merged_dic = merge_gui_state_with_user_input(user_data, gui_data)
 
