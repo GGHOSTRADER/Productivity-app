@@ -26,7 +26,7 @@ Priority: High
 -[1][medium][hours][no][high][Nothing Started][Task Handler / Producer][In the spirit of micro services, I can create a complete different service for the creation of new tasks and modification of existing ones][Plan / Conceptualize the needs for it][conceptualization]
 
 # Task 3 : Integration
--[1][Easy][hours][no][high][Working on it][engine + habit + task builder + task modifier][Designed the flow of the integration in the PAD 1) Added to nokami, the capacity to go back in tasks 2) Testing the integration in the secondary branch 3) Converted task into GUI based, keep testing 4) Nokami app is working 5) flow starting to take shape][State saves to shared state, but is called before hand, need to deal with this][deliberate work]
+-[1][Easy][hours][no][high][Working on it][engine + habit + task builder + task modifier][Designed the flow of the integration in the PAD 1) Added to nokami, the capacity to go back in tasks 2) Testing the integration in the secondary branch 3) Converted task into GUI based, keep testing 4) Nokami app is working 5) State working and being able to pass it][Add states to questions regarding the Task before TIME gui Launch][deliberate work]
 
 
 # Project: ts.py
@@ -48,7 +48,7 @@ Priority: medium
 # Project: Orderblow + Objetive system + ML
 Priority: high
 
-## Task 1: Plan Course
--[1][easy][hours][yes][high][Working on it][book research][Got Subjects and Fat cat video][Do PP, Add combination of indicators, clean fatcat video, explain hidden intenstions in Microstructure, HFT, SPOOFING][book research]
+## Task 1: Create Course
+-[1][easy][hours][No][high][Working on it][class 3][Real world trading videos, Ask them to come with trading intra day, show how a price based strategy improves with volume][Edit videos, Create a price strategy, run a basic backtest and add volume to it][Deliberate Work]
 
 

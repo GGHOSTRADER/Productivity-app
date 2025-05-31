@@ -36,7 +36,7 @@ class FocusApp:
         self.root.configure(bg="black")
 
     def create_user_data_display(self):
-        for label in get_questions():
+        for label in list(self.data.keys()):
             frame = tk.Frame(self.root, bg="black")
             frame.pack(pady=5, anchor="w")
             tk.Label(frame, text=f"{label}:", width=25, fg="white", bg="black").pack(

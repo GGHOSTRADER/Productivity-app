@@ -10,7 +10,11 @@ from infrastructure.presenters.gui import PREDEFINED_TASKS
 import ttkbootstrap as tb
 from infrastructure.gui_windows.splash import show_splash_screen
 from application.input_service import ask_questions
-from infrastructure.input_adapters import get_user_input
+from infrastructure.input_adapters import (
+    get_user_input,
+    merge_gui_state_with_user_input,
+    pair_gui_state_with_questions,
+)
 from infrastructure.gui_windows.tips import display_project_tips
 from infrastructure.presenters.cli import get_questions
 from infrastructure.nokami import launch_nokami_gui
@@ -45,14 +49,25 @@ def firing_app():
     # This need to be defined
     questions = get_questions()
     user_data = ask_questions(questions, get_user_input)
+    gui_data = pair_gui_state_with_questions(
+        [
+            shared_state.state_from_chosen.current_task_title,
+            shared_state.state_from_chosen.to_do,
+            shared_state.state_from_chosen.description,
+        ],
+        ["Name", "To do", "Description"],
+    )
+    data_merged_dic = merge_gui_state_with_user_input(user_data, gui_data)
 
     launch_app(
         root,
-        user_data,
+        data_merged_dic,
         categories_tasks["stabilization"].sound_url,
-        categories_tasks[user_input].sound_url,
+        categories_tasks[shared_state.state_from_chosen.type_task].sound_url,
         lambda: display_project_tips(
-            root, categories_tasks[user_input].tips, on_all_tasks_completed=None
+            root,
+            categories_tasks[shared_state.state_from_chosen.type_task].tips,
+            on_all_tasks_completed=None,
         ),
     )
     root.mainloop()

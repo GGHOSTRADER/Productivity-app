@@ -26,4 +26,4 @@ def continue_prompt(STAGE):
 
 # domain/questions.py
 def get_questions():
-    return ["Name", "What are you doing?", "Why?", "Consequence of not doing it?"]
+    return ["Why?", "Consequence of not doing it?"]
