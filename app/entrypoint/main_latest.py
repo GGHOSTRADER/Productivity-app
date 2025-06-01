@@ -19,9 +19,12 @@ from infrastructure.gui_windows.tips import display_project_tips
 from infrastructure.presenters.cli import get_questions
 from infrastructure.nokami import launch_nokami_gui
 from infrastructure import shared_state
+from infrastructure.presenters.say_voice import say
 
 
 def firing_app():
+    text = "ENGAGING ORDER 66"
+    say(text)
     root = tb.Window(themename="darkly")
     root.withdraw()
     image_splash = (
