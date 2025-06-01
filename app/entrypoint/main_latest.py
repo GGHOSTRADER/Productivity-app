@@ -23,7 +23,7 @@ from infrastructure.presenters.say_voice import say
 
 
 def firing_app():
-    text = "ENGAGING ORDER 66"
+    text = "LAUNCHING SYSTEM NOKAMI"
     say(text)
     root = tb.Window(themename="darkly")
     root.withdraw()

@@ -16,7 +16,7 @@ Brain states - Music:
     5) Logic / Verbal Work: Brown Noise
 ---------------------------------------------------------------------------------------------------
 
-# Project: g_cerebro
+# Project: Nokami
 Priority: High
 
 ## Task 1: Improve Task Tracker
@@ -28,21 +28,24 @@ Priority: High
 
 
 
-# Project: ts.py
+# Project: data_engine
 Priority: High
 
 ## Task 1 : Refactoring
--[1][Hard][Several days][yes][High][Working on it][Modular Monolith][1.Cleaned the repo 2. Created the directory tree 3. test / logging module 4. test / Print module][Start next module, check notebook 5. test / web sign in module][deliberate work]
+-[1][Hard][Several days][yes][High][Working on it][Modular Monolith][1.Cleaned the repo 2. Created the directory tree 3. logging - print - webopen - websign modules and their tests done][URL Connection module / Test][deliberate work]
 
 ## Task 2: Plot Trigger & Drawing
 -[1][medium][day][no][medium][Nothing Started][Update plotting system][Modify only last tick instead of full redraw,It is about to fusion with the other points I am working on][][conceptualization]
 -[2][medium][several days][no][medium][Nothing Started][Three Thread Architecture][The CPU bond process is locking the I/O process, need to separete them][Cant work this until new architecture is in place][deliberate work]
 
-# Project: G Project
+# Project: G 
 Priority: medium
 
 ## Task 1: ECHO
 -[1][hard][several days][no][high][Nothing StArted][Future self][Drifting for too long, think in bushido][][agent research]
+
+## Task 1: Memory system
+-[1][medium][several days][no][high][Nothing StArted][Need systematic memory retation][efforts at learning seem futile when cant keep it][Resarch ways to enhance it][agent research]
 
 # Project: Orderblow + Objetive system + ML
 Priority: high
