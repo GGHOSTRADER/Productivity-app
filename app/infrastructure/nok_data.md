@@ -32,7 +32,7 @@ Priority: High
 Priority: High
 
 ## Task 1 : Refactoring
--[1][Hard][Several days][yes][High][Working on it][Modular Monolith][1.Cleaned the repo 2. Created the directory tree 3. logging - print - webopen - websign modules and their tests done][URL Connection module / Test][deliberate work]
+-[1][Hard][Several days][yes][High][Working on it][Modular Monolith][1.Cleaned the repo 2. Created the directory tree 3. logging - print - webopen - websign modules and their tests done 4. TOKENS module done, but need to fake the json object to test the functions that parse it][TOKENS Test][deliberate work]
 
 ## Task 2: Plot Trigger & Drawing
 -[1][medium][day][no][medium][Nothing Started][Update plotting system][Modify only last tick instead of full redraw,It is about to fusion with the other points I am working on][][conceptualization]
@@ -57,4 +57,4 @@ Priority: high
 Priority: high
 
 ## Task 1: ts testing
--[1][easy][hours][yes][high][Working on it][ts steamwrite][code is ready, basically I just need run it live and test the writing][Run it on monday and see if it crashes][Deliberate Work]
+-[1][easy][hours][yes][high][Working on it][ts steamwrite][code is ready, basically I just need run it live and test the writing][prepare secondary computer][Deliberate Work]
